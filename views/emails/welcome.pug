@@ -1,0 +1,18 @@
+extends baseEmail
+
+block content
+    p Hi #{firstName},
+    p Welcome to safetours,
+    p You can upload your profile picture for now!
+    p Let's discover our tours!
+    table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+        tbody
+            tr
+                td(align='left')
+                    table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                        tbody
+                            tr
+                                td
+                                    a(href=`${url}`, target='_blank') Upload your photo
+    p If you need any help with booking your next tour, please contact us!
+    p - safetours' team
