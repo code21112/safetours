@@ -19,9 +19,9 @@ const handleDuplicateFieldsDB = err => {
 };
 
 const handleValidationErrorDB = err => {
-    console.log('IN handleValidationErrorDB', err)
+    // console.log('IN handleValidationErrorDB', err)
     const errors = Object.values(err.errors).map(element => element.message);
-    console.log(errors)
+    // console.log(errors)
 
     const message = `Invalid data: ${errors.join('. ')}`
     return new AppError(message, 400);
@@ -57,8 +57,8 @@ const sendErrorProd = (err, req, res) => {
                 message: err.message
             });
         }
-        console.error('ERROR', err)
-        console.log('err.name', err.name)
+        // console.error('ERROR', err)
+        // console.log('err.name', err.name)
         return res.status(500).json({
             status: 'Error',
             message: "Something went wrong..."
@@ -88,8 +88,8 @@ module.exports = (err, req, res, next) => {
         console.log('IN production mode')
         let error = { ...err }
         error.message = err.message;
-        console.log(err.name)
-        console.log(error)
+        // console.log(err.name)
+        // console.log(error)
         if (err.name === "CastError") err = handleCastErrorDB(err)
         if (err.code === 11000) err = handleDuplicateFieldsDB(err)
         if (err.name === 'ValidationError') err = handleValidationErrorDB(err)

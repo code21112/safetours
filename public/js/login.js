@@ -12,7 +12,7 @@ export const login = async (email, password) => {
     // console.log(email, password)
 
     try {
-        console.log('IN TRY BLOCK')
+        // console.log('IN TRY BLOCK')
         const res = await axios({
             method: 'POST',
             url: 'http://127.0.0.1:3000/api/v1/users/login',
@@ -30,7 +30,7 @@ export const login = async (email, password) => {
             }, 1500)
         }
     } catch (err) {
-        console.log('IN CATCH BLOCK')
+        // console.log('IN CATCH BLOCK')
         // alert(err.response.data.message)
         showAlert('error', err.response.data.message)
     }
@@ -39,7 +39,7 @@ export const login = async (email, password) => {
 
 export const logout = async () => {
     try {
-        console.log('IN TRY BLOCK of login.js')
+        // console.log('IN TRY BLOCK of login.js')
         const res = await axios({
             method: 'GET',
             url: 'http://127.0.0.1:3000/api/v1/users/logout'
@@ -47,7 +47,7 @@ export const logout = async () => {
         if (res.data.status === 'success') window.location.reload(true)
         // if (res.data.success === 'success') Location.reload(forcedReload: true)
     } catch (err) {
-        console.log('IN CATCH BLOCK of login.js')
+        // console.log('IN CATCH BLOCK of login.js')
         showAlert('error', 'Error logging out. Try again.')
     }
 };
