@@ -21,6 +21,8 @@ const bookingRouter = require('./routes/bookingRoutes');
 
 const app = express();
 
+app.enable('trust-proxy');
+
 // app.use(
 //     cors({
 //         origin: 'http://127.0.0.1:3000',
