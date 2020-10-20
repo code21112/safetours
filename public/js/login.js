@@ -44,9 +44,12 @@ export const logout = async () => {
             method: 'GET',
             url: '/api/v1/users/logout'
         });
-        if (res.data.status === 'success')
+        if (res.data.status === 'success') {
             // window.location.reload(true)
-            location.assign('/')
+            window.setTimeout(() => {
+                location.assign('/')
+            }, 400)
+        }
         // if (res.data.success === 'success') Location.reload(forcedReload: true)
     } catch (err) {
         // console.log('IN CATCH BLOCK of login.js')
