@@ -15,7 +15,7 @@ export const login = async (email, password) => {
         // console.log('IN TRY BLOCK')
         const res = await axios({
             method: 'POST',
-            url: 'http://127.0.0.1:3000/api/v1/users/login',
+            url: '/api/v1/users/login',
             data: {
                 email: email,
                 password: password
@@ -42,7 +42,7 @@ export const logout = async () => {
         // console.log('IN TRY BLOCK of login.js')
         const res = await axios({
             method: 'GET',
-            url: 'http://127.0.0.1:3000/api/v1/users/logout'
+            url: '/api/v1/users/logout'
         });
         if (res.data.status === 'success') window.location.reload(true)
         // if (res.data.success === 'success') Location.reload(forcedReload: true)
