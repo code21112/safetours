@@ -28,8 +28,8 @@ block content
                                 //- img.card__icon(src='/img/icon-flag.png', alt='Tour 1')
                                 span= `${tour.locations.length} stops`
                             .card__data
-                            svg.overview-box__icon
-                                use(xlink:href='/img/icons.svg#icon-calendar')
+                                svg.overview-box__icon
+                                    use(xlink:href='/img/icons.svg#icon-calendar')
                                 //- img.card__icon(src='/img/icon-calendar.png', alt='Tour 1')
                                 span= tour.startDates[0].toLocaleString('en-US', {year: 'numeric', month: 'long'})
                             .card__data
