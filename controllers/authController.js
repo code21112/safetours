@@ -20,7 +20,6 @@ const createSendToken = (user, statusCode, req, res) => {
         ),
         httpOnly: true,
         secure: req.secure || req.headers['x-forwarded-proto'] === 'https'
-
     });
 
     // cookieOptions.secure = 
@@ -74,7 +73,7 @@ exports.login = catchAsync(async (req, res, next) => {
 
 
 exports.logout = (req, res) => {
-    res.cookie('jwt', 'loggedout', {
+    res.cookie('jwt', 'logged out', {
         expires: new Date(Date.now() + 5 * 1000),
         httpOnly: true
     });
