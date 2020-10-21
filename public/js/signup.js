@@ -10,11 +10,11 @@ import { showAlert } from './alerts';
 
 
 export const signup = async (name, email, password, passwordConfirm) => {
-    console.log('IN SIGNUP')
-    console.log(email, password, name, passwordConfirm)
+    // console.log('IN SIGNUP')
+    // console.log(email, password, name, passwordConfirm)
 
     try {
-        console.log('IN TRY BLOCK')
+        // console.log('IN TRY BLOCK')
         const res = await axios({
             method: 'POST',
             url: '/api/v1/users/signup',
@@ -37,7 +37,7 @@ export const signup = async (name, email, password, passwordConfirm) => {
             // }, 1500)
         }
     } catch (err) {
-        console.log('IN CATCH BLOCK')
+        // console.log('IN CATCH BLOCK')
         // alert(err.response.data.message)
         showAlert('error', err.response.data.message)
     }
