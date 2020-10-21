@@ -40,6 +40,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
 
+app.options('*', cors());
+
+
 // 1) GLOBAL MIDDLEWARES
 // Set security HTTP headers
 // app.use(helmet());
