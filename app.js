@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const csp = require('express-csp');
 const compression = require('compression');
 
@@ -150,7 +151,10 @@ const limiter = rateLimit({
 app.use('/api', limiter);
 
 // Route for Stripe
-app.post('/webhook-checkout', bookingController.webhookCheckout);
+app.post('/webhook-checkout',
+    bodyParser.raw({ type: 'application/json' }),
+    bookingController.webhookCheckout
+);
 
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
