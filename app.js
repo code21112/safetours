@@ -23,7 +23,7 @@ const bookingController = require('./controllers/bookingController');
 
 const app = express();
 
-app.enable('trust-proxy');
+app.enable('trust proxy');
 
 // app.use(
 //     cors({
@@ -151,7 +151,8 @@ const limiter = rateLimit({
 app.use('/api', limiter);
 
 // Route for Stripe
-app.post('/webhook-checkout',
+app.post(
+    '/webhook-checkout',
     bodyParser.raw({ type: 'application/json' }),
     bookingController.webhookCheckout
 );
